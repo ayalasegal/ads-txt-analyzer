@@ -22,33 +22,37 @@ app.post('/getAds', async (req, res) => {
 });
 
 function parseAdsTxt(adsTxt) {
-  // Create an object to store advertiser domains and their frequencies
-  const advertiserFrequency = {};  
+  const advertiserFrequency = {};
   const lines = adsTxt.split('\n');
-  console.log(lines);
 
   // Iterate through each line in the ads.txt file
   lines.forEach(line => {
-      // Split the line into fields
-      if (!(line.includes('#') || line.includes('OWNERDOMAIN'))) {
-          const fields = line.split(',');
+    // Skip lines that don't contain valid advertiser information
+    if (!line.trim() || line.startsWith('#') || line.includes('=') || !line.includes(',')) {
+      return;
+    }
 
-          // Extract the advertiser domain (the first field)
-          const advertiserDomain = fields[0].trim();
+    // Split the line into fields
+    const fields = line.split(',');
 
-          // Update the frequency in the object
-          advertiserFrequency[advertiserDomain] = (advertiserFrequency[advertiserDomain] || 0) + 1;
-      }
+    // Extract the advertiser domain (the first field)
+    const advertiserDomain = fields[0].trim();
+
+    // Update the frequency in the object
+    advertiserFrequency[advertiserDomain] = (advertiserFrequency[advertiserDomain] || 0) + 1;
   });
+
   // Convert the object into an array of objects
   const result = Object.entries(advertiserFrequency).map(([domain, count]) => ({
-      domain,
-      count
+    domain,
+    count
   }));
-  console.log(result)
 
   return result;
 }
+
+
+
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
