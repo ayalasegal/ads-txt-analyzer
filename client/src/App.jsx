@@ -28,7 +28,6 @@ function App() {
       const response = await axios.get(
         `${process.env.REACT_APP_API_BASE_URL}/getAds?domain=${domain}`
       );
-      console.log("response", response.data);
       return response.data;
     } catch (error) {
       console.error(error);
@@ -61,7 +60,7 @@ function App() {
           domainDetails && (
             <>
               <DetailsFrame details={domainDetails} />
-              <AdvertisersTable advertisers={domainDetails.results} />
+              <AdvertisersTable advertisers={domainDetails.results} domain={domainDetails.domain} />
             </>
           )
         )}

@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { DataGrid, GridToolbar } from "@mui/x-data-grid";
-import { CustomHeader } from "./CustomHeader";
+import { DataGrid } from "@mui/x-data-grid";
+import { CustomHeader } from "./CustomComponents/CustomHeader";
+import CustomToolbar from "./CustomComponents/CustomToolBar";
 
-function AdvertisersTable({ advertisers }) {
+function AdvertisersTable({ advertisers, domain }) {
   const [sortModel, setSortModel] = useState([
     { field: "count", sort: "desc" },
   ]);
@@ -36,10 +37,11 @@ function AdvertisersTable({ advertisers }) {
       disableColumnFilter
       disableColumnSelector
       disableDensitySelector
-      slots={{ toolbar: GridToolbar }}
+      slots={{ toolbar: CustomToolbar }}
       slotProps={{
         toolbar: {
           showQuickFilter: true,
+          domain:domain
         },
       }}
     />
