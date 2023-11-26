@@ -25,6 +25,8 @@ function App() {
 
   const fetchDomainDetails = async (domain) => {
     try {
+      console.log("the enviroment variable: ",process.env.APP_BASE_URL)
+      console.log("the link: ", `${process.env.APP_BASE_URL}/getAds?domain=${domain}`)
       const response = await axios.get(
         `${process.env.APP_BASE_URL}/getAds?domain=${domain}`
         );
