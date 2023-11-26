@@ -3,10 +3,10 @@
     "version": "1.0.0",
     "main": "server/src/app.js",
     "scripts": {
-      "start": "nodemon server/src/app.js",
+      "start": "node server/src/app.js",
       "heroku-postbuild": "cd client && npm install && npm run build",
       "dev": "concurrently \"npm run server\" \"npm run client\"",
-      "server": "node server/server.js",
+      "server": "node server/src/app.js",
       "client": "cd client && npm start"
     },
     "dependencies": {
