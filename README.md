@@ -1,4 +1,4 @@
-# Ads.txt Analyzer Web App
+# Ads.txt Crawler Web App
 
 This web application allows users to analyze the 'ads.txt' file of a given domain, showing a table with advertiser domains and the frequency of each advertiser in the file.
 
@@ -46,3 +46,27 @@ To run this project locally, follow these steps:
    npm start
    ```
 4. Open your browser and visit http://localhost:3000 to view the application.
+
+## Bonus Features
+
+- **Sorting and Searching:**
+  - Click on table header to sort the table numerically according to the count.
+  - Use the search bar to filter results.
+
+- **Download Results:**
+  - Click the "Download" button to download results in JSON or the "export" button to download the results in CSV format or print the table.
+
+- **Loader:**
+  - A loader appears while waiting for results.
+
+- **Caching:**
+  - Results are cached on the server to improve performance for repeated queries.
+
+## Deployment
+
+The application is deployed on Heroku. Visit [https://ads-txt-analyzer-3378e576a070.herokuapp.com/](https://ads-txt-analyzer-3378e576a070.herokuapp.com/) to access the live demo.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
