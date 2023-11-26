@@ -24,9 +24,7 @@ function App() {
 
   const fetchDomainDetails = async (domain) => {
     try {
-      const response = await axios.post("http://localhost:5000/getAds", {
-        domain,
-      });
+      const response = await axios.get(`http://localhost:5000/getAds?domain=${domain}`);
       return response.data;
     } catch (error) {
       console.error(error);

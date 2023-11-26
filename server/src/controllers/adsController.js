@@ -1,7 +1,7 @@
 const adsService = require('../services/adsService');
 const cache = {};
 async function getAds(req, res) {
-  const { domain } = req.body;
+  const { domain } = req.query;
   if (cache[domain]) {
     res.json( {domain,executionTime:0,parseErrors:0 ,results:cache[domain]});
     return;
