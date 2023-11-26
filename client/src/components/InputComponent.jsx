@@ -10,19 +10,17 @@ function InputComponent({ onDomainDetails }) {
   };
 
   return (
-    <div className="input-container" style={{ display: 'flex' }}>
+    <div className="input-container">
       <TextField
         className='input-text-field'
         placeholder="Enter domain name... (e.g. msn.com)"
         variant="outlined"
         onChange={(e) => setDomain(e.target.value)}
-        style={{ marginRight: '1rem', flex: 1 }} // Add margin to the right and flex to fill remaining space
       />
       <Button
         variant="contained"
         className='input-button'
         onClick={handleClick}
-        style={{ height: '3.5rem' }}
       >
         Parse Ads.txt
       </Button>
