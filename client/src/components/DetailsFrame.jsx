@@ -15,7 +15,7 @@ function DetailsFrame({ details }) {
     <Box className='details-container'>
       <Typography className='detail'>Domain:<strong>{details.domain}</strong></Typography>
       <Typography className='detail'>Total Advertisers:<strong>{details.results.length}</strong></Typography>
-      <Typography className='detail'>Parse time: <strong>{details.executionTime} ms</strong></Typography>
+      <Typography className='detail'>Parse time: <strong>{details.executionTime===0?"Cached":details.executionTime+" ms"} </strong></Typography>
       <Typography className='detail'>Parse errors: <strong>{details.parseErrors}</strong></Typography>
       <Link className='detail' onClick={handleDownload} underline="hover">
         Download
