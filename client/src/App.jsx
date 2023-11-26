@@ -28,6 +28,7 @@ function App() {
       const response = await axios.get(
         `${process.env.APP_BASE_URL}/getAds?domain=${domain}`
         );
+        console.log("response", response.data)
       return response.data;
     } catch (error) {
       console.error(error);
