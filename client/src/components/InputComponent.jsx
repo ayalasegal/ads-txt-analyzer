@@ -8,7 +8,11 @@ function InputComponent({ onDomainDetails }) {
   const handleClick = () => {
     onDomainDetails(domain);
   };
-
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      handleClick();
+    }
+  };
   return (
     <div
       className="input-container"
@@ -30,6 +34,7 @@ function InputComponent({ onDomainDetails }) {
           width: "70%",
           marginBottom: "1rem",
         }}
+        onKeyPress={handleKeyPress}
       />
       <Button
         className="input-button "
