@@ -4,6 +4,7 @@ async function getAds(req, res) {
   const { domain } = req.body;
   if (cache[domain]) {
     res.json( {domain,executionTime:0,parseErrors:0 ,results:cache[domain]});
+    return;
   }
   try {
     const startTime = new Date();
