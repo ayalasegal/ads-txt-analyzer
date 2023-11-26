@@ -11,3 +11,59 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.app-container {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.input-container {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.MuiButton-contained{
+  text-transform: initial !important;
+}
+.input-text-field {
+  width: 70%;
+  margin-bottom: 1rem; 
+  margin-right: "1rem"; 
+  flex: 1;
+  margin-right: '1rem';
+}
+
+.input-button {
+  width: 30%;
+  height: "3.5rem"
+}
+.details-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 1rem;
+  margin-bottom: 1em;
+  padding:3; 
+  background-color:'#9ECCF3'
+}
+/* Add additional styling as needed for responsiveness */
+@media screen and (max-width: 800px) {
+  .input-container {
+    flex-direction: column;
+  }
+
+  .input-text-field {
+    width: 100%;
+  }
+  .detail {
+    width: 100%;
+  }
+
+  .input-button {
+    width: 100%;
+    margin-top: 2em !important; /* Add margin to the top for space between elements */
+  }
+}
+
