@@ -3,7 +3,7 @@ const cache = {};
 async function getAds(req, res) {
   const { domain } = req.body;
   if (cache[domain]) {
-    return {domain,executionTime:0,parseErrors:0 ,results:cache[domain]};
+    res.json( {domain,executionTime:0,parseErrors:0 ,results:cache[domain]});
   }
   try {
     const startTime = new Date();
