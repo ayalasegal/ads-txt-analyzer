@@ -1,4 +1,9 @@
-/* Add additional styling as needed for responsiveness */
+.input-text-field{
+  width: "70%",
+}
+.input-button{
+  width: "30%"
+}
 @media screen and (max-width: 800px) {
   .input-container {
     flex-direction: column;

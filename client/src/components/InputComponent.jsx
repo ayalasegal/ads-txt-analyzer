@@ -31,16 +31,15 @@ function InputComponent({ onDomainDetails }) {
         style={{
           marginRight: "1rem",
           flex: 1,
-          width: "70%",
           marginBottom: "1rem",
         }}
         onKeyPress={handleKeyPress}
       />
       <Button
-        className="input-button "
+        className="input-button"
         variant="contained"
         onClick={handleClick}
-        style={{ height: "3.5rem", width: "30%", textTransform: "initial" }}
+        style={{ height: "3.5rem", textTransform: "initial" }}
       >
         Parse Ads.txt
       </Button>
