@@ -1,48 +1,46 @@
 .app-container {
-    max-width: 80%;
-    margin: 0 auto;
-  }
-  
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.input-container {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.input-text-field {
+  width: 70%;
+  margin-bottom: 1rem; /* Adjust margin for regular screens */
+}
+
+.input-button {
+  width: 30%;
+}
+.details-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 1rem;
+  margin-bottom: 1em;
+}
+/* Add additional styling as needed for responsiveness */
+@media screen and (max-width: 800px) {
   .input-container {
-    margin-bottom: 1rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    flex-direction: column;
   }
-  
+
   .input-text-field {
-    width: 70%;
-    margin-bottom: 1rem; /* Adjust margin for regular screens */
+    width: 100%;
   }
-  
+  .detail {
+    width: 100%;
+  }
+
   .input-button {
-    width: 30%;
+    width: 100%;
+    margin-top: 2em !important; /* Add margin to the top for space between elements */
   }
-  .details-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-top: 1rem;
-    margin-bottom: 1em;
-
-  }
-  /* Add additional styling as needed for responsiveness */
-  @media screen and (max-width: 800px) {
-    .input-container {
-      flex-direction: column;
-    }
-  
-    .input-text-field {
-      width: 100%;
-    }
-    .detail{
-        width: 100%;
-    }
-
-    .input-button {
-      width: 100%;
-      margin-top: 2em !important; /* Add margin to the top for space between elements */
-    }
-  }
-  
+}

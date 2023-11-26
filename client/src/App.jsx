@@ -5,7 +5,7 @@ import AdvertisersTable from "./components/AdvertisersTable";
 import axios from "axios";
 import "./App.css";
 import Box from "@mui/material/Box";
-import Typography from '@mui/material/Typography';
+import Typography from "@mui/material/Typography";
 
 import CircularProgress from "@mui/material/CircularProgress";
 
@@ -25,7 +25,9 @@ function App() {
 
   const fetchDomainDetails = async (domain) => {
     try {
-      const response = await axios.get(`http://localhost:5000/getAds?domain=${domain}`);
+      const response = await axios.get(
+        `http://localhost:5000/getAds?domain=${domain}`
+      );
       return response.data;
     } catch (error) {
       console.error(error);
@@ -34,9 +36,14 @@ function App() {
 
   return (
     <div className="app-container">
-              <Typography variant="h3" color="primary" sx={{marginBottom:'1rem', marginTop:'3rem'}}>
-                Ads.txt Crawler
-              </Typography>      <InputComponent onDomainDetails={handleDomainDetails} />
+      <Typography
+        variant="h3"
+        color="primary"
+        sx={{ marginBottom: "1rem", marginTop: "3rem" }}
+      >
+        Ads.txt Crawler
+      </Typography>{" "}
+      <InputComponent onDomainDetails={handleDomainDetails} />
       <div>
         {isLoading ? (
           <Box
@@ -44,7 +51,7 @@ function App() {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              height: "100vh"
+              height: "100vh",
             }}
           >
             <CircularProgress />
