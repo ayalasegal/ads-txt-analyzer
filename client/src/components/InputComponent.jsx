@@ -8,24 +8,34 @@ function InputComponent({ onDomainDetails }) {
   const handleClick = () => {
     onDomainDetails(domain);
   };
-  const handleKeyPress = (e) => {
-    if (e.key === "Enter") {
-      handleClick();
-    }
-  };
+
   return (
-    <div className="input-container">
+    <div
+      className="input-container"
+      style={{
+        display: "flex",
+        marginBottom: "1rem",
+        flexWrap: "wrap",
+        justifyContent: "space-around",
+      }}
+    >
       <TextField
         className="input-text-field"
         placeholder="Enter domain name... (e.g. msn.com)"
         variant="outlined"
         onChange={(e) => setDomain(e.target.value)}
-        onKeyPress={handleKeyPress}
+        style={{
+          marginRight: "1rem",
+          flex: 1,
+          width: "70%",
+          marginBottom: "1rem",
+        }}
       />
       <Button
+        className="input-button "
         variant="contained"
-        className="input-button"
         onClick={handleClick}
+        style={{ height: "3.5rem", width: "30%", textTransform: "initial" }}
       >
         Parse Ads.txt
       </Button>

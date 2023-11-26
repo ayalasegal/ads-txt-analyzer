@@ -14,7 +14,18 @@ function DetailsFrame({ details }) {
   };
 
   return (
-    <Box className="details-container" >
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "row",
+        flexWrap: "wrap",
+        justifyContent: "space-between",
+        marginTop: "1rem",
+        marginBottom: "1em",
+        padding: 3,
+        backgroundColor: "#9ECCF3",
+      }}
+    >
       <Typography className="detail">
         Domain:<strong>{details.domain}</strong>
       </Typography>

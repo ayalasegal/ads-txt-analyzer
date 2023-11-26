@@ -22,27 +22,27 @@ function AdvertisersTable({ advertisers }) {
   };
 
   return (
-      <DataGrid
-        disableColumnMenu
-        columns={columns}
-        rows={advertisers}
-        autoHeight
-        pageSize={advertisers.length}
-        getRowId={(row) => row.domain}
-        sortModel={sortModel}
-        onSortModelChange={handleSortModelChange}
-        sortingOrder={["desc", "asc"]}
-        sx={{ width: "100%" }}
-        disableColumnFilter
-        disableColumnSelector
-        disableDensitySelector
-        slots={{ toolbar: GridToolbar }}
-        slotProps={{
-          toolbar: {
-            showQuickFilter: true,
-          },
-        }}
-      />
+    <DataGrid
+      disableColumnMenu
+      columns={columns}
+      rows={advertisers}
+      autoHeight
+      pageSize={advertisers.length}
+      getRowId={(row) => row.domain}
+      sortModel={sortModel}
+      onSortModelChange={handleSortModelChange}
+      sortingOrder={["desc", "asc"]}
+      sx={{ width: "100%" }}
+      disableColumnFilter
+      disableColumnSelector
+      disableDensitySelector
+      slots={{ toolbar: GridToolbar }}
+      slotProps={{
+        toolbar: {
+          showQuickFilter: true,
+        },
+      }}
+    />
   );
 }
 

@@ -27,8 +27,8 @@ function App() {
     try {
       const response = await axios.get(
         `${process.env.REACT_APP_API_BASE_URL}/getAds?domain=${domain}`
-        );
-        console.log("response", response.data)
+      );
+      console.log("response", response.data);
       return response.data;
     } catch (error) {
       console.error(error);
@@ -36,11 +36,11 @@ function App() {
   };
 
   return (
-    <div className="app-container">
+    <div style={{ maxWidth: "80%", margin: "0 auto" }}>
       <Typography
         variant="h3"
         color="primary"
-        sx={{ marginBottom: "1rem", marginTop: "3rem" ,fontWeight: 'bold' }}
+        sx={{ marginBottom: "1rem", marginTop: "3rem", fontWeight: "bold" }}
       >
         Ads.txt Crawler
       </Typography>
