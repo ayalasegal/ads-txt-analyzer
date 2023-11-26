@@ -27,7 +27,7 @@ function parseAdsTxt(adsTxt) {
       const fields = line.split(',');
   
       // Extract the advertiser domain (the first field)
-      const advertiserDomain = fields[0].trim();
+      const advertiserDomain = fields[0].trim().toLowerCase();
   
       // Update the frequency in the object
       advertiserFrequency[advertiserDomain] = (advertiserFrequency[advertiserDomain] || 0) + 1;
