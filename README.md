@@ -29,3 +29,20 @@ To run this project locally, follow these steps:
 
    ```bash
    git clone https://github.com/your-username/ads-txt-analyzer.git
+   ```
+2. Install dependencies for the frontend and backend:
+
+   ```bash
+   cd ads-txt-analyzer
+   cd client && npm install
+   cd ../server && npm install
+   ```
+3. Start the frontend and backend servers:
+   ```bash
+   # In the 'client' directory
+   npm start
+
+   # In the 'server' directory
+   npm start
+   ```
+4. Open your browser and visit http://localhost:3000 to view the application.
