@@ -9,7 +9,9 @@
   flex-wrap: wrap;
   justify-content: space-around;
 }
-
+.MuiButton-contained{
+  text-transform: lowercase !important;
+}
 .input-text-field {
   width: 70%;
   margin-bottom: 1rem; 
