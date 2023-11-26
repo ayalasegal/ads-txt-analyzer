@@ -1,0 +1,15 @@
+{
+    "name": "add-txt-analyzer",
+    "version": "1.0.0",
+    "description": "My Heroku-deployed app",
+    "scripts": {
+      "start": "node server/src/app.js",
+      "heroku-postbuild": "cd client && npm install --production && npm run build",
+      "test": "cd server && npm test"
+    },
+    "engines": {
+        "node": "12.21.0",
+        "npm": "6.14.11"
+      }
+  }
+  
