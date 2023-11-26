@@ -39,10 +39,10 @@ function App() {
       <Typography
         variant="h3"
         color="primary"
-        sx={{ marginBottom: "1rem", marginTop: "3rem" }}
+        sx={{ marginBottom: "1rem", marginTop: "3rem" ,fontWeight: 'bold' }}
       >
         Ads.txt Crawler
-      </Typography>{" "}
+      </Typography>
       <InputComponent onDomainDetails={handleDomainDetails} />
       <div>
         {isLoading ? (
