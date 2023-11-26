@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { DataGrid } from "@mui/x-data-grid";
-import { LinearProgress } from '@mui/material';
+import { DataGrid ,GridToolbar } from "@mui/x-data-grid";
 import { CustomHeader } from './CustomHeader';
 
 function AdvertisersTable({ advertisers }) {
@@ -18,7 +17,6 @@ function AdvertisersTable({ advertisers }) {
     <div className="table-container">
       <DataGrid
         disableColumnMenu
-        slots={{ loadingOverlay: LinearProgress }}
         columns={columns}
         rows={advertisers}
         autoHeight
@@ -28,6 +26,15 @@ function AdvertisersTable({ advertisers }) {
         onSortModelChange={handleSortModelChange}
         sortingOrder={['desc', 'asc']}
         sx={{ width: '100%' }}
+        disableColumnFilter
+        disableColumnSelector
+        disableDensitySelector
+        slots={{ toolbar: GridToolbar }}
+        slotProps={{
+          toolbar: {
+            showQuickFilter: true,
+          },
+        }}
       />
     </div>
   );
