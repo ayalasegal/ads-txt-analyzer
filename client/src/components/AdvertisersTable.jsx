@@ -40,8 +40,7 @@ function AdvertisersTable({ advertisers, domain }) {
       slots={{ toolbar: CustomToolbar }}
       slotProps={{
         toolbar: {
-          showQuickFilter: true,
-          domain:domain
+          domain: domain,
         },
       }}
     />
