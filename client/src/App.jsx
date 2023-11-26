@@ -1,16 +1,42 @@
 import React, { useState } from 'react';
-import DomainForm from './components/DomainForm'
-import DomainInformation from './components/DomainInformation/DomainInformation';
+import InputComponent from './components/InputComponent';
+import DetailsFrame from './components/DetailsFrame';
+import AdvertisersTable from './components/AdvertisersTable';
+import axios from 'axios';
 import './App.css';
 
 function App() {
+  const [domainDetails, setDomainDetails] = useState(null);
 
-  const [isInitialized,setIsInitialized]=useState(false)
-  const [domain, setDomain] = useState('');
+  const handleDomainDetails = async (domain) => {
+    try {
+      // Make a server call to fetch domain details
+      const details = await fetchDomainDetails(domain);
+      setDomainDetails(details);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+
+  const fetchDomainDetails = async (domain) => {
+    try {
+      const response = await axios.post('http://localhost:5000/getAds', { domain });
+      return response.data
+    } catch (error) {
+      console.error(error);
+    } finally {
+    }
+  };
+
   return (
-    <div className="app-container">
-      <DomainForm setDomain={setDomain} setIsInitialized={setIsInitialized}/>
-      {isInitialized ? <DomainInformation domain={domain} />:""}
+    <div>
+      <h1>Ads.txt Crawler</h1>
+      <InputComponent
+        onDomainDetails={handleDomainDetails}
+      />
+      {domainDetails && <DetailsFrame details={domainDetails} />}
+      {domainDetails && <AdvertisersTable advertisers={domainDetails.results} />}
     </div>
   );
 }

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { DataGrid } from "@mui/x-data-grid";
 import { LinearProgress } from '@mui/material';
 import { CustomHeader } from './CustomHeader';
- function AdvertisersTable({advertisers,isLoading}){
+ function AdvertisersTable({advertisers}){
   console.log("advertisers: ",advertisers)
     const [sortModel, setSortModel] = useState([
         { field: 'count', sort: 'desc' }, // Initial sorting on the 'count' column in ascending order
@@ -17,9 +17,8 @@ import { CustomHeader } from './CustomHeader';
       };
     return (
         <>
-              {isLoading?"":<DataGrid
+              {<DataGrid
         disableColumnMenu
-        loading={isLoading}
         slots={{loadingOverlay:LinearProgress}}
         columns={columns}
         rows={advertisers}
@@ -29,7 +28,7 @@ import { CustomHeader } from './CustomHeader';
         sortModel={sortModel}
         onSortModelChange={handleSortModelChange}
         sortingOrder={['desc', 'asc']}
-
+        sx={{width:'90%'}}
       />}
         </>
     )
