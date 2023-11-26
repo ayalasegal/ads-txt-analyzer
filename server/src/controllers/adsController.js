@@ -6,11 +6,10 @@ async function getAds(req, res) {
   console.log("domain: ",domain)
   try {
     const startTime = new Date();
-    const advertisers = await adsService.getAds(domain);
-    const parseTime = new Date() - startTime;
-    const totalAdvertisers = advertisers.length;
+    const results = await adsService.getAds(domain);
+    const executionTime = new Date() - startTime;
 
-    res.json({ advertisers,totalAdvertisers,parseTime,parseErrors:0 });
+    res.json({ domain,executionTime,parseErrors:0 ,results});
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'Internal Server Error' });

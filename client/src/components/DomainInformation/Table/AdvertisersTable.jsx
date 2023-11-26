@@ -3,6 +3,7 @@ import { DataGrid } from "@mui/x-data-grid";
 import { LinearProgress } from '@mui/material';
 import { CustomHeader } from './CustomHeader';
  function AdvertisersTable({advertisers,isLoading}){
+  console.log("advertisers: ",advertisers)
     const [sortModel, setSortModel] = useState([
         { field: 'count', sort: 'desc' }, // Initial sorting on the 'count' column in ascending order
       ]);

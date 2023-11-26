@@ -2,11 +2,9 @@ const axios = require('axios');
 
 async function getAds(domain) {
   try {
-    console.log("in function ",`http://${domain}/ads.txt`)
     const response = await axios.get(`http://${domain}/ads.txt`);
-    await setTimeout(()=>{},6000)
     const adsTxt = response.data;
-    console.log("txt: ",adsTxt)
+    await setTimeout(()=>{},70000)
     return parseAdsTxt(adsTxt);
   } catch (error) {
     console.error(error);

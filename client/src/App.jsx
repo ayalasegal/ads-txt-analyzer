@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import DomainForm from './components/DomainForm'
-import DomainInfo from './components/DomainInformation/DomainInfo';
+import DomainInformation from './components/DomainInformation/DomainInformation';
 import './App.css';
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="app-container">
       <DomainForm setDomain={setDomain} setIsInitialized={setIsInitialized}/>
-      {isInitialized ? <DomainInfo domain={domain} />:""}
+      {isInitialized ? <DomainInformation domain={domain} />:""}
     </div>
   );
 }

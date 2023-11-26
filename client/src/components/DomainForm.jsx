@@ -8,11 +8,11 @@ function DomainForm({ setDomain,setIsInitialized}) {
   
     return (
         <div style={{ width: '80%', margin: 'auto', marginBottom:'3em' }}>
-              <h1 >Ads.txt Analyzer</h1>
+              <h1 >Ads.txt Crawler</h1>
 
 <div style={{ display: 'flex', alignItems: 'baseline', marginLeft:"5%" ,marginBottom:'' }}>
 <TextField
-  placeholder="Enter a content site domain (e.g., msn.com..)"
+  placeholder="Enter domain name... (e.g. msn.com)"
   variant="outlined"
   onChange={handleInputChange}
   style={{ width: '70%', height:'3rem'}} 
@@ -22,7 +22,7 @@ function DomainForm({ setDomain,setIsInitialized}) {
   onClick={() => setIsInitialized(true)}
   style={{ marginLeft: '1rem', height:'3.5rem' }} 
 >
-  Get Advertisers
+  Parse Ads.txt
 </Button>
 
       </div>
