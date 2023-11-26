@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const adsRouter = require("./routes/adsRouter");
-
+const path = require('path'); // Make sure to require the 'path' module
 const app = express();
 const PORT = process.env.PORT || 5000;
 app.use(cors());
