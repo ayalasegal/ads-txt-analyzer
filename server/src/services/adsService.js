@@ -1,10 +1,10 @@
 const axios = require('axios');
-
+const cache = {};
 async function getAds(domain) {
+  
   try {
     const response = await axios.get(`http://${domain}/ads.txt`);
     const adsTxt = response.data;
-    await setTimeout(()=>{},70000)
     return parseAdsTxt(adsTxt);
   } catch (error) {
     console.error(error);

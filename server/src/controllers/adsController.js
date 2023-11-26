@@ -1,14 +1,15 @@
 const adsService = require('../services/adsService');
-
+const cache = {};
 async function getAds(req, res) {
-  console.log(req.body)
   const { domain } = req.body;
-  console.log("domain: ",domain)
+  if (cache[domain]) {
+    return {domain,executionTime:0,parseErrors:0 ,results:cache[domain]};
+  }
   try {
     const startTime = new Date();
     const results = await adsService.getAds(domain);
     const executionTime = new Date() - startTime;
-
+    cache[domain] = results;
     res.json({ domain,executionTime,parseErrors:0 ,results});
   } catch (error) {
     console.error(error);
