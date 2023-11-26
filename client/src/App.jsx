@@ -5,6 +5,8 @@ import AdvertisersTable from "./components/AdvertisersTable";
 import axios from "axios";
 import "./App.css";
 import Box from "@mui/material/Box";
+import Typography from '@mui/material/Typography';
+
 import CircularProgress from "@mui/material/CircularProgress";
 
 function App() {
@@ -14,7 +16,6 @@ function App() {
     try {
       setIsLoading(true);
       const details = await fetchDomainDetails(domain);
-      await new Promise((resolve) => setTimeout(resolve, 2000));
       setDomainDetails(details);
       setIsLoading(false);
     } catch (error) {
@@ -33,8 +34,9 @@ function App() {
 
   return (
     <div className="app-container">
-      <h1>Ads.txt Crawler</h1>
-      <InputComponent onDomainDetails={handleDomainDetails} />
+              <Typography variant="h3" color="primary" sx={{marginBottom:'1rem', marginTop:'3rem'}}>
+                Ads.txt Crawler
+              </Typography>      <InputComponent onDomainDetails={handleDomainDetails} />
       <div>
         {isLoading ? (
           <Box
