@@ -7,20 +7,19 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(bodyParser.json());
-app.use("/", adsRouter);
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
-});
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
-});
 
 // Catch-all route to serve the React app
 app.use(express.static(path.join(__dirname, 'build')));
 
-
-app.get('/*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+app.use("/", adsRouter);
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
 });
+
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
+});
+
+
 
 module.exports = app; // Export the app for testing purposes
