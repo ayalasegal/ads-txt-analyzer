@@ -22,7 +22,6 @@ function AdvertisersTable({ advertisers }) {
   };
 
   return (
-    <div className="table-container">
       <DataGrid
         disableColumnMenu
         columns={columns}
@@ -44,7 +43,6 @@ function AdvertisersTable({ advertisers }) {
           },
         }}
       />
-    </div>
   );
 }
 

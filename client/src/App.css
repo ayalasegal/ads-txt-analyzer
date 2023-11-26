@@ -12,11 +12,14 @@
 
 .input-text-field {
   width: 70%;
-  margin-bottom: 1rem; /* Adjust margin for regular screens */
+  margin-bottom: 1rem; 
+  margin-right: "1rem"; 
+  flex: 1
 }
 
 .input-button {
   width: 30%;
+  height: "3.5rem"
 }
 .details-container {
   display: flex;
@@ -25,6 +28,8 @@
   justify-content: space-between;
   margin-top: 1rem;
   margin-bottom: 1em;
+  padding:3; 
+  background-color:'#9ECCF3'
 }
 /* Add additional styling as needed for responsiveness */
 @media screen and (max-width: 800px) {

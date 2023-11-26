@@ -4,8 +4,15 @@ import { TextField } from "@mui/material";
 
 function InputComponent({ onDomainDetails }) {
   const [domain, setDomain] = useState("");
+
   const handleClick = () => {
     onDomainDetails(domain);
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      handleClick();
+    }
   };
 
   return (
@@ -15,13 +22,12 @@ function InputComponent({ onDomainDetails }) {
         placeholder="Enter domain name... (e.g. msn.com)"
         variant="outlined"
         onChange={(e) => setDomain(e.target.value)}
-        style={{ marginRight: "1rem", flex: 1 }} // Add margin to the right and flex to fill remaining space
+        onKeyPress={handleKeyPress}
       />
       <Button
         variant="contained"
         className="input-button"
         onClick={handleClick}
-        style={{ height: "3.5rem" }}
       >
         Parse Ads.txt
       </Button>

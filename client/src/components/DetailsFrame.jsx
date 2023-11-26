@@ -14,7 +14,7 @@ function DetailsFrame({ details }) {
   };
 
   return (
-    <Box className="details-container" sx={{padding:3, backgroundColor:'#9ECCF3'}}>
+    <Box className="details-container" >
       <Typography className="detail">
         Domain:<strong>{details.domain}</strong>
       </Typography>
