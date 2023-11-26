@@ -1,18 +1,16 @@
 {
-    "name": "add-txt-analyzer",
+    "name": "my-app",
     "version": "1.0.0",
-    "description": "My Heroku-deployed app",
     "main": "server/src/app.js",
-
     "scripts": {
-        "start": "node server/src/app.js",
-        "heroku-postbuild": "cd client && npm install --production && npm run build",
-        "test": "cd server && npm test"
+      "start": "nodemon server/src/app.js",
+      "heroku-postbuild": "cd client && npm install && npm run build",
+      "dev": "concurrently \"npm run server\" \"npm run client\"",
+      "server": "node server/server.js",
+      "client": "cd client && npm start"
     },
-    "engines": {
-        "node": "12.21.0",
-        "npm": "6.14.11"
+    "dependencies": {
+      "express": "^4.17.1"
     }
-}
-
+  }
   
