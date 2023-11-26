@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Button from '@mui/material/Button';
-import {TextField} from '@mui/material';
+import { TextField } from '@mui/material';
+
 function InputComponent({ onDomainDetails }) {
   const [domain, setDomain] = useState('');
 
@@ -9,21 +10,23 @@ function InputComponent({ onDomainDetails }) {
   };
 
   return (
-       <>
-<TextField
-  placeholder="Enter domain name... (e.g. msn.com)"
-  variant="outlined"
-  onChange={(e) => setDomain(e.target.value)}
-  style={{ width: '70%', height:'3rem'}} 
-/>
-<Button
-  variant="contained"
-  onClick={handleClick}
-  style={{ marginLeft: '1rem', height:'3.5rem' }} 
->
-  Parse Ads.txt
-</Button>
-</>
+    <div className="input-container" style={{ display: 'flex' }}>
+      <TextField
+        className='input-text-field'
+        placeholder="Enter domain name... (e.g. msn.com)"
+        variant="outlined"
+        onChange={(e) => setDomain(e.target.value)}
+        style={{ marginRight: '1rem', flex: 1 }} // Add margin to the right and flex to fill remaining space
+      />
+      <Button
+        variant="contained"
+        className='input-button'
+        onClick={handleClick}
+        style={{ height: '3.5rem' }}
+      >
+        Parse Ads.txt
+      </Button>
+    </div>
   );
 }
 
