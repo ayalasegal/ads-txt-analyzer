@@ -15,6 +15,12 @@ Visit the live demo [here](https://ads-txt-analyzer-3378e576a070.herokuapp.com/)
   - Option to download results in JSON or CSV format.
   - Server-side caching for improved performance when querying the same domain multiple times.
 
+## Responsive Design
+
+This web application is designed with a responsive layout, ensuring a seamless user experience across a variety of devices and screen sizes. Whether you're accessing the app from a desktop, tablet, or mobile device, the interface adapts to provide optimal usability and readability.
+
+Feel free to explore and analyze 'ads.txt' files on the go!
+
 ## Tech Stack
 
 - Frontend: React with JSX
