@@ -1,5 +1,5 @@
 const adsService = require("../services/adsService");
-const cache = {};
+const cache = {}; // Cache to store results for a specific domain to optimize response time
 async function getAds(req, res) {
   const { domain } = req.query;
   if (cache[domain]) {
